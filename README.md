@@ -55,7 +55,7 @@ ls -l /usr/local/bin/seraf
 
 ### Running(Windows)
 
-**Use your IDE(I'm sorry)**
+Use your IDE(I'm sorry)
 
 ### Running tests
 
