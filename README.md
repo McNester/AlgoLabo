@@ -36,7 +36,7 @@ ls -l /usr/local/bin/seraf
 ```
 
 ### Running(Mac/Linux)
-1. **First way to test out the problems is by using the terminal**__
+1. **First way to test out the problems is by using the terminal**
 
     If you forgot the commands simply type:
     ```sh
@@ -49,7 +49,17 @@ ls -l /usr/local/bin/seraf
     If you want to test each problem individually type:
     ```sh
     seraf firstProb # e.g. secondProb,thirdProb... 
-    Just use ordinal number followed by Prob
+    ```
+    Just use ordinal number followed by Prob, and it will run the corresponding problem.
 2. **Another way to test out the problems is simply by opening the project in IDE and running Main class**
 
+### Running(Windows)
 
+**Use your IDE(I'm sorry)**
+
+### Running tests
+
+** To test how the algorithms that are solving the problems work:
+Go to the test folder and there you can find each test for the
+Corresponding problem, run the using your IDE.
+**
