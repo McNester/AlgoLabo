@@ -4,15 +4,28 @@ public class Main {
         if (args.length == 1) {
             executeFromCmd(args[0]);
         } else if (args.length == 0) {
-            int[] array = { 10, 1, 32, 3, 45 };
-
-            System.out.println(getMin(array));
+            main();
         } else {
-            System.out.println("Command does not exist");
+            Utils.printNotExist();
         }
     }
 
-    public static int getMin(int[] array) {
+    private static void main() {
+        Utils.printNewLine();
+        runFirstProblem();
+
+    }
+
+    private static void runFirstProblem() {
+        System.out.println("The first problem");
+        Utils.printNewLine();
+        int[] arr = Utils.getArrayInput();
+        Utils.printNewLine();
+        System.out.println("The minimum val from the array:" + getMin(arr));
+
+    }
+
+    private static int getMin(int[] array) {
         int n = Integer.MAX_VALUE;
 
         for (int i = 0; i < array.length; i++) {
