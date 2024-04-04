@@ -1,3 +1,4 @@
+import java.util.LinkedList;
 import java.util.Scanner;
 
 public class Utils {
@@ -24,6 +25,29 @@ public class Utils {
         System.out.print("Enter the number: ");
         int num = scan.nextInt();
         return num;
+    }
+
+    public static LinkedList<Integer> getLinkedListInput() {
+        System.out.print("Enter the size of numbers array: ");
+        int size = scan.nextInt();
+        System.out.print("Enter the array: ");
+
+        LinkedList<Integer> list = new LinkedList<>();
+
+        for (int i = 0; i < size; i++) {
+            list.add(scan.nextInt());
+        }
+
+        return list;
+
+    }
+
+    public static void printLinkedList(LinkedList<Integer> list) {
+
+        for (Integer item : list) {
+            System.out.print(item + " ");
+        }
+
     }
 
     public static int[] getTwoNumberInput() {

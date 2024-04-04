@@ -116,12 +116,12 @@ public class Main {
         System.out.println("The 7. problem");
         Utils.printNewLine();
         LinkedList<Integer> list = Utils.getLinkedListInput();
+        Utils.printNewLine();
+
         LinkedList<Integer> revList = reverseList(list);
 
-        Utils.printNewLine();
-        System.out.print("Here is the reversed array: ");
-        Utils.printLinkedList(revList);
-
+        System.out.println(list);
+        System.out.println(revList);
     }
 
     /*
@@ -196,7 +196,7 @@ public class Main {
     private static LinkedList<Integer> reverseList(LinkedList<Integer> list) {
         LinkedList<Integer> reversedList = new LinkedList<>();
 
-        for (int i = (list.size()) - 1; i >= 0; i--) {
+        for (int i = list.size() - 1; i >= 0; i++) {
             reversedList.add(list.get(i));
         }
 
