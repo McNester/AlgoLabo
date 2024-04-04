@@ -20,6 +20,15 @@ public class Main {
         runSecondProblem();
         runThirdProblem();
         runFourthProblem();
+        runFifthProblem();
+        runSixthProblem();
+        runSeventhProblem();
+        runEighthProblem();
+        runNinthProblem();
+        runTenthProblem();
+
+        Utils.printNewLine();
+        System.out.println("You've checked all the problems! Thank you for your time!");
 
     }
 
@@ -140,6 +149,38 @@ public class Main {
         }
     }
 
+    private static void runNinthProblem() {
+        Utils.printNewLine();
+        System.out.println("The 9. problem");
+        Utils.printNewLine();
+
+        int[] inputs = Utils.getTwoNumberInput();
+        int n = inputs[0];
+        int k = inputs[1];
+
+        int bin = findBinomial(n, k);
+
+        Utils.printNewLine();
+
+        System.out.printf("The C(%d,%d) is: %d\n", n, k, bin);
+
+    }
+
+    private static void runTenthProblem() {
+        Utils.printNewLine();
+        System.out.println("The 10. problem");
+        Utils.printNewLine();
+
+        int[] inputs = Utils.getTwoNumberInput();
+
+        int a = inputs[0];
+        int b = inputs[1];
+
+        int gcd = findGCD(a, b);
+        System.out.printf("The GCD(%d,%d) is: %d\n", a, b, gcd);
+
+    }
+
     /*
      * Here are methods that are used to solve the problmes,
      * but only pure solution, nothing related with inputs,user experience, etc.
@@ -224,6 +265,26 @@ public class Main {
         return str.matches("\\d+");
     }
 
+    private static int findBinomial(int n, int k) {
+
+        if (n == k || k == 0) {
+            return 1;
+        }
+
+        return findBinomial(n - 1, k - 1) + findBinomial(n - 1, k);
+
+    }
+
+    private static int findGCD(int a, int b) {
+
+        if (b == 0) {
+            return a;
+        }
+
+        return findGCD(b, a % b);
+
+    }
+
     /*
      * Command line executioner
      */
@@ -246,9 +307,9 @@ public class Main {
         } else if (method.equals("eighthProb")) {
             runEighthProblem();
         } else if (method.equals("ninthProb")) {
-            runSecondProblem();
+            runNinthProblem();
         } else if (method.equals("tenthProb")) {
-            runSecondProblem();
+            runTenthProblem();
         } else {
             Utils.printNotExist();
         }
