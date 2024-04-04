@@ -93,6 +93,22 @@ public class Main {
 
     }
 
+    private static void runSixthProblem() {
+        Utils.printNewLine();
+        System.out.println("The sixth problem");
+        Utils.printNewLine();
+
+        int[] inputs = Utils.getTwoNumberInput();
+
+        int a = inputs[0];
+        int n = inputs[1];
+
+        int result = findPower(a, n);
+
+        Utils.printNewLine();
+        System.out.printf("The %d-th power of %d is- %d", n, a, result);
+
+    }
     /*
      * Here are methods that are used to solve the problmes,
      * but only pure solution, nothing related with inputs,user experience, etc.
@@ -152,6 +168,16 @@ public class Main {
         return findFibonacciElement(n - 1) + findFibonacciElement(n - 2);
     }
 
+    private static int findPower(int a, int n) {
+        int res = a;
+        for (int i = 1; i < n; i++) {
+            res *= a;
+        }
+
+        return res;
+
+    }
+
     /*
      * Command line executioner
      */
@@ -168,7 +194,7 @@ public class Main {
         } else if (method.equals("fifthProb")) {
             runFifthProblem();
         } else if (method.equals("sixthProb")) {
-            runSecondProblem();
+            runSixthProblem();
         } else if (method.equals("seventhProb")) {
             runSecondProblem();
         } else if (method.equals("eighthProb")) {

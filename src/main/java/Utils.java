@@ -26,6 +26,23 @@ public class Utils {
         return num;
     }
 
+    public static int[] getTwoNumberInput() {
+
+        int[] inputs = new int[2];
+
+        for (int i = 0; i < inputs.length; i++) {
+            if (i == 0) {
+                System.out.print("Enter the first number: ");
+            } else {
+                System.out.print("Enter the second number: ");
+            }
+            inputs[i] = scan.nextInt();
+        }
+
+        return inputs;
+
+    }
+
     public static int[] getArrayInput() {
 
         System.out.print("Enter the size of numbers array: ");
