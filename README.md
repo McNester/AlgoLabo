@@ -32,7 +32,7 @@ sudo ln -s ~/IdeaProjects/AlgoLabo/src/scripts/seraf.sh /usr/local/bin/seraf
 
 ```sh
 ls -l /usr/local/bin/seraf
+#*Must show the location of the symlink, in case of success*
 ```
-*Must show the location of the symlink, in case of success*
 
 
