@@ -1,4 +1,8 @@
+import java.util.Scanner;
+
 public class Main {
+    private static Scanner scan = new Scanner(System.in);
+
     public static void main(String[] args) {
 
         if (args.length == 1) {
@@ -11,9 +15,9 @@ public class Main {
     }
 
     private static void main() {
-        Utils.printNewLine();
         runFirstProblem();
         runSecondProblem();
+        runThirdProblem();
 
     }
 
@@ -21,6 +25,7 @@ public class Main {
      * The problem runnners are here
      */
     private static void runFirstProblem() {
+        Utils.printNewLine();
         System.out.println("The first problem");
         Utils.printNewLine();
         int[] arr = Utils.getArrayInput();
@@ -36,6 +41,26 @@ public class Main {
         int[] array = Utils.getArrayInput();
         Utils.printNewLine();
         System.out.println("The average from the array: " + getAvg(array));
+
+    }
+
+    private static void runThirdProblem() {
+        Utils.printNewLine();
+        System.out.println("The third problem");
+        Utils.printNewLine();
+
+        System.out.print("Enter the number: ");
+        int num = scan.nextInt();
+
+        boolean isPrime = isPrime(num);
+        Utils.printNewLine();
+        System.out.print("The number is ");
+
+        if (isPrime) {
+            System.out.println("Prime");
+            return;
+        }
+        System.out.println("Composite");
 
     }
 
@@ -66,6 +91,16 @@ public class Main {
         return avg;
     }
 
+    private static boolean isPrime(int n) {
+
+        for (int i = 2; i < n - 1; i++) {
+            if (n % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     /*
      * Command line executioner
      */
@@ -76,7 +111,7 @@ public class Main {
         } else if (method.equals("secondProb")) {
             runSecondProblem();
         } else if (method.equals("thirdProb")) {
-            runSecondProblem();
+            runThirdProblem();
         } else if (method.equals("fourthProb")) {
             runSecondProblem();
         } else if (method.equals("fifthProb")) {
@@ -91,6 +126,8 @@ public class Main {
             runSecondProblem();
         } else if (method.equals("tenthProb")) {
             runSecondProblem();
+        } else {
+            Utils.printNotExist();
         }
 
     }
