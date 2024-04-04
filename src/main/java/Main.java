@@ -1,10 +1,15 @@
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println(args.length);
-        System.out.println("Hello from me!");
-        int[] array = { 10, 1, 32, 3, 45 };
-        System.out.println(getMin(array));
+        if (args.length == 1) {
+            executeFromCmd(args[0]);
+        } else if (args.length == 0) {
+            int[] array = { 10, 1, 32, 3, 45 };
+
+            System.out.println(getMin(array));
+        } else {
+            System.out.println("Command does not exist");
+        }
     }
 
     public static int getMin(int[] array) {
@@ -17,5 +22,11 @@ public class Main {
         }
 
         return n;
+    }
+
+    private static void executeFromCmd(String method) {
+
+        System.out.println(method);
+
     }
 }
