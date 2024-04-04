@@ -168,10 +168,10 @@ public class Main {
         int a = inputs[0];
         int n = inputs[1];
 
-        int result = findPower(a, n);
+        double result = findPower(a, n);
 
         Utils.printNewLine();
-        System.out.printf("The %d-th power of %d is- %d", n, a, result);
+        System.out.printf("The %d-th power of %d is- %f.", n, a, result);
 
     }
 
@@ -291,7 +291,7 @@ public class Main {
      * 
      * @return The minimum of the given array.
      */
-    private static int getMin(int[] array) {
+    public static int getMin(int[] array) {
         int n = Integer.MAX_VALUE;
 
         for (int i = 0; i < array.length; i++) {
@@ -315,7 +315,7 @@ public class Main {
      * @return The average of the elements of the given array.
      *
      */
-    private static double getAvg(int[] array) {
+    public static double getAvg(int[] array) {
         double sum = 0;
         for (int i = 0; i < array.length; i++) {
             sum += array[i];
@@ -336,7 +336,7 @@ public class Main {
      * 
      * @return Bollean value of the number being prime(true) or not(false).
      */
-    private static boolean isPrime(int n) {
+    public static boolean isPrime(int n) {
 
         if (n <= 1) {
             return false;
@@ -361,9 +361,9 @@ public class Main {
      * @return The factorial of the given number.
      *
      */
-    private static int getFactorial(int n) {
+    public static int getFactorial(int n) {
 
-        if (n == 1) {
+        if (n <= 1) {
             return 1;
         }
         return n * getFactorial(n - 1);
@@ -381,7 +381,8 @@ public class Main {
      * @return The n-th element of the fibonacci sequence.
      *
      */
-    private static int findFibonacciElement(int n) {
+    // TODO: optimize the algo
+    public static int findFibonacciElement(int n) {
 
         if (n == 0) {
 
@@ -406,10 +407,21 @@ public class Main {
      * 
      * @return The given number a to the given n-th power.
      */
-    private static int findPower(int a, int n) {
+    public static double findPower(int a, int n) {
+        if (n == 0) {
+            return 1;
+        }
         int res = a;
-        for (int i = 1; i < n; i++) {
-            res *= a;
+        if (n < 0) {
+            for (int i = 1; i < n * -1; i++) {
+                res *= a;
+            }
+            return 1 / (double) res;
+
+        } else {
+            for (int i = 1; i < n; i++) {
+                res *= a;
+            }
         }
 
         return res;
@@ -430,7 +442,8 @@ public class Main {
      * 
      * @return The reversed array of the given one.
      */
-    private static LinkedList<Integer> reverseList(LinkedList<Integer> list) {
+    // TODO: optimize the algo
+    public static LinkedList<Integer> reverseList(LinkedList<Integer> list) {
         LinkedList<Integer> reversedList = new LinkedList<>();
 
         for (int i = (list.size()) - 1; i >= 0; i--) {
@@ -453,7 +466,7 @@ public class Main {
      * 
      * @return Wheter the given string consists of all digits(true) or not(false).
      */
-    private static boolean isAllDigits(String str) {
+    public static boolean isAllDigits(String str) {
         return str.matches("\\d+");
     }
 
@@ -471,7 +484,8 @@ public class Main {
      * 
      * @return The Binomial of the given n and k.
      */
-    private static int findBinomial(int n, int k) {
+    // TODO: optimize the algo
+    public static int findBinomial(int n, int k) {
 
         if (n == k || k == 0) {
             return 1;
@@ -495,7 +509,7 @@ public class Main {
      * 
      * @return The GCD of the given two numbers a and b.
      */
-    private static int findGCD(int a, int b) {
+    public static int findGCD(int a, int b) {
 
         if (b == 0) {
             return a;
