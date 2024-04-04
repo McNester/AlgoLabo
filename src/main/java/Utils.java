@@ -1,13 +1,16 @@
 import java.util.LinkedList;
 import java.util.Scanner;
 
+/*
+ * The Utils class contains all the reusable methods/helpers so that code in the Main class 
+ * looks cleaner and simpler.
+ * Mostly it consists of methods used for taking an input from the user
+ * and printing some frequently use text.
+ * */
 public class Utils {
     /*
-     * public static void main(String[] args) {
-     * getArrayInput();
-     * }
+     * Global scanner wich is used throughout the class for inputs
      */
-
     private static Scanner scan = new Scanner(System.in);
 
     public static void printNotExist() {
@@ -39,7 +42,6 @@ public class Utils {
         }
 
         return list;
-
     }
 
     public static void printLinkedList(LinkedList<Integer> list) {
@@ -88,18 +90,5 @@ public class Utils {
         }
 
         return arr;
-
     }
-    // TODO: remove this
-
-    public static void printArray(int[] arr) {
-
-        for (int i = 0; i < arr.length; i++) {
-            System.out.println(arr[i]);
-            System.out.println();
-
-        }
-
-    }
-
 }
