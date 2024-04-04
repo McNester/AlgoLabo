@@ -1,4 +1,4 @@
-# Alorithms first laboratory
+# ADS first laboratory
 
 This repo contains solutions to all the ten problems for the assignment
 
@@ -11,7 +11,7 @@ These instructions will get you a copy of the project.
 - IntelliJ IDEA
 
 ### Installing (Mac/Linux)
-A step by step series of examples that tell you how to get everything running.
+A step by step series of steps that tell you how to get everything running.
 
 1. **Go to the Idea working directory:**
 ```sh
@@ -37,19 +37,18 @@ ls -l /usr/local/bin/seraf
 
 ### Running(Mac/Linux)
 1. **First way to test out the problems is by using the terminal**
-Inside the terminal type the command: seraf
-    - If you forgot the commands simply type:
+    If you forgot the commands simply type:
     ```sh
     seraf list
     ```
-    - If you want to test all 10 problems sequentially just run:
+    If you want to test all 10 problems sequentially just run:
     ```sh
     seraf
     ```
-    - If you want to test each problem individually type:
+    If you want to test each problem individually type:
     ```sh
-    seraf firstProb # e.g. secondProb,thirdProb... Just use ordinal number followed by Prob
-    ```
+    seraf firstProb # e.g. secondProb,thirdProb... 
+    Just use ordinal number followed by Prob
 2. **Another way to test out the problems is simply by opening the project in IDE and running Main class**
 
 
