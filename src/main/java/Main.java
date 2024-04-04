@@ -1,5 +1,4 @@
 import java.util.LinkedList;
-import java.util.Scanner;
 
 /*
  * The Main class that contains all the functionality
