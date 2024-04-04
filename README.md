@@ -11,7 +11,7 @@ These instructions will get you a copy of the project.
 - IntelliJ IDEA
 
 ### Installing (Mac/Linux)
-A step by step series of steps that tell you how to get everything running.
+A step by step guide that help you to get everything running.
 
 1. **Go to the Idea working directory:**
 ```sh
