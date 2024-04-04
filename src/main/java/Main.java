@@ -78,6 +78,21 @@ public class Main {
 
     }
 
+    private static void runFifthProblem() {
+
+        Utils.printNewLine();
+        System.out.println("The fifth problem");
+        Utils.printNewLine();
+
+        int num = Utils.getNumberInput();
+
+        int fib = findFibonacciElement(num);
+
+        Utils.printNewLine();
+        System.out.printf("The %d-th element in the Fibonacci sequence is: %d\n", num, fib);
+
+    }
+
     /*
      * Here are methods that are used to solve the problmes,
      * but only pure solution, nothing related with inputs,user experience, etc.
@@ -124,6 +139,19 @@ public class Main {
 
     }
 
+    private static int findFibonacciElement(int n) {
+
+        if (n == 0) {
+
+            return 0;
+        } else if (n == 1) {
+            return 1;
+
+        }
+
+        return findFibonacciElement(n - 1) + findFibonacciElement(n - 2);
+    }
+
     /*
      * Command line executioner
      */
@@ -138,7 +166,7 @@ public class Main {
         } else if (method.equals("fourthProb")) {
             runFourthProblem();
         } else if (method.equals("fifthProb")) {
-            runSecondProblem();
+            runFifthProblem();
         } else if (method.equals("sixthProb")) {
             runSecondProblem();
         } else if (method.equals("seventhProb")) {
