@@ -36,7 +36,8 @@ ls -l /usr/local/bin/seraf
 ```
 
 ### Running(Mac/Linux)
-1. **First way to test out the problems is by using the terminal**
+1. **First way to test out the problems is by using the terminal**__
+
     If you forgot the commands simply type:
     ```sh
     seraf list
