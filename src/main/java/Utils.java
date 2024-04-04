@@ -50,6 +50,15 @@ public class Utils {
 
     }
 
+    public static String getStrInput() {
+
+        System.out.print("Enter the string: ");
+        String str = scan.next();
+
+        return str;
+
+    }
+
     public static int[] getTwoNumberInput() {
 
         int[] inputs = new int[2];

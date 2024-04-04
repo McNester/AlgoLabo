@@ -124,6 +124,22 @@ public class Main {
 
     }
 
+    private static void runEighthProblem() {
+        Utils.printNewLine();
+        System.out.println("The 8. problem");
+        Utils.printNewLine();
+
+        String str = Utils.getStrInput();
+
+        Utils.printNewLine();
+        System.out.print("Does the string consists of digits?  ");
+        if (isAllDigits(str)) {
+            System.out.print("Yes\n");
+        } else {
+            System.out.print("No\n");
+        }
+    }
+
     /*
      * Here are methods that are used to solve the problmes,
      * but only pure solution, nothing related with inputs,user experience, etc.
@@ -204,6 +220,10 @@ public class Main {
 
     }
 
+    private static boolean isAllDigits(String str) {
+        return str.matches("\\d+");
+    }
+
     /*
      * Command line executioner
      */
@@ -224,7 +244,7 @@ public class Main {
         } else if (method.equals("seventhProb")) {
             runSeventhProblem();
         } else if (method.equals("eighthProb")) {
-            runSecondProblem();
+            runEighthProblem();
         } else if (method.equals("ninthProb")) {
             runSecondProblem();
         } else if (method.equals("tenthProb")) {
