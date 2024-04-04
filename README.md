@@ -59,7 +59,7 @@ ls -l /usr/local/bin/seraf
 
 ### Running tests
 
-** To test how the algorithms that are solving the problems work:
+To test how the algorithms that are solving the problems work:
 Go to the test folder and there you can find each test for the
 Corresponding problem, run the using your IDE.
-**
+
