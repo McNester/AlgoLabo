@@ -18,6 +18,7 @@ public class Main {
         runFirstProblem();
         runSecondProblem();
         runThirdProblem();
+        runFourthProblem();
 
     }
 
@@ -49,8 +50,7 @@ public class Main {
         System.out.println("The third problem");
         Utils.printNewLine();
 
-        System.out.print("Enter the number: ");
-        int num = scan.nextInt();
+        int num = Utils.getNumberInput();
 
         boolean isPrime = isPrime(num);
         Utils.printNewLine();
@@ -61,6 +61,20 @@ public class Main {
             return;
         }
         System.out.println("Composite");
+
+    }
+
+    private static void runFourthProblem() {
+        Utils.printNewLine();
+        System.out.println("The fourth problem");
+        Utils.printNewLine();
+
+        int num = Utils.getNumberInput();
+
+        int factorial = getFactorial(num);
+
+        Utils.printNewLine();
+        System.out.printf("The factorial of the %d is- %d \n", num, factorial);
 
     }
 
@@ -101,6 +115,15 @@ public class Main {
         return true;
     }
 
+    private static int getFactorial(int n) {
+
+        if (n == 1) {
+            return 1;
+        }
+        return n * getFactorial(n - 1);
+
+    }
+
     /*
      * Command line executioner
      */
@@ -113,7 +136,7 @@ public class Main {
         } else if (method.equals("thirdProb")) {
             runThirdProblem();
         } else if (method.equals("fourthProb")) {
-            runSecondProblem();
+            runFourthProblem();
         } else if (method.equals("fifthProb")) {
             runSecondProblem();
         } else if (method.equals("sixthProb")) {

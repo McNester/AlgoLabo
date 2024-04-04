@@ -20,6 +20,12 @@ public class Utils {
 
     }
 
+    public static int getNumberInput() {
+        System.out.print("Enter the number: ");
+        int num = scan.nextInt();
+        return num;
+    }
+
     public static int[] getArrayInput() {
 
         System.out.print("Enter the size of numbers array: ");
