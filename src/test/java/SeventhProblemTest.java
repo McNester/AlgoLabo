@@ -11,6 +11,7 @@ public class SeventhProblemTest {
         LinkedList<Integer> list = new LinkedList<>(Arrays.asList(1,4,6,2));
         LinkedList<Integer> expected = new LinkedList<>(Arrays.asList(2,6,4,1));
         assertEquals(expected, Main.reverseList(list));
+        System.out.println(list);
 
     }
     @Test

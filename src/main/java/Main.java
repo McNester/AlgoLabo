@@ -1,3 +1,4 @@
+import java.util.List;
 import java.util.LinkedList;
 
 /*
@@ -398,7 +399,8 @@ public class Main {
     /*
      * The method calculates the given power of a given number.
      * 
-     * It uses for-loop to iterate through all numbers from 1 to the n(the power),
+     * It uses recursive approach with base cases(e.g. power is 0),
+     * By multiplying the given number by itself n-times,
      * Thus it has time complexity of O(n).
      *
      * @param a The number that we raise to the power of n.
@@ -407,25 +409,27 @@ public class Main {
      * 
      * @return The given number a to the given n-th power.
      */
-    public static double findPower(int a, int n) {
-        if (n == 0) {
+    public static double findPower(double a, int n) {
+        // base cases
+        if (a == 1 || n == 0) {
             return 1;
+        } else if (a == 0) {
+            return 0;
         }
-        int res = a;
+        if (n == 1) {
+            return a;
+        }
+
+        // if the power is negative we turn the value upside down(1/a)
         if (n < 0) {
-            for (int i = 1; i < n * -1; i++) {
-                res *= a;
-            }
-            return 1 / (double) res;
-
-        } else {
-            for (int i = 1; i < n; i++) {
-                res *= a;
-            }
+            n = n * -1;
+            a = 1 / a;
         }
 
-        return res;
-
+        if (n == 2) {
+            return a * a;
+        }
+        return a * findPower(a, n - 1);
     }
 
     /*
@@ -444,14 +448,32 @@ public class Main {
      */
     // TODO: optimize the algo
     public static LinkedList<Integer> reverseList(LinkedList<Integer> list) {
+        if (list.size() == 0) {
+            return list;
+        }
         LinkedList<Integer> reversedList = new LinkedList<>();
-
-        for (int i = (list.size()) - 1; i >= 0; i--) {
-            reversedList.add(list.get(i));
+        if (list.size() == 1) {
+            return list;
         }
 
-        return reversedList;
+        // swap
+        int first = list.getFirst();
+        int last = list.getLast();
 
+        reversedList.add(last);
+        reversedList.add(first);
+
+        if (list.size() == 2) {
+            return reversedList;
+        }
+
+        List<Integer> elementsBetween = list.subList(1, list.size() - 1);
+        LinkedList<Integer> newLinkedList = new LinkedList<>(elementsBetween);
+
+        reversedList.addAll((int) (reversedList.size() / 2),
+                reverseList(newLinkedList));
+
+        return reversedList;
     }
 
     /*
