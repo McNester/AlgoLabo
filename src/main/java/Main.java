@@ -489,7 +489,18 @@ public class Main {
      * @return Wheter the given string consists of all digits(true) or not(false).
      */
     public static boolean isAllDigits(String str) {
-        return str.matches("\\d+");
+
+        if (str.length() == 0) {
+            return false;
+        }
+        Character first = str.charAt(0);
+        if (!Character.isDigit(first)) {
+            return false;
+        }
+        if (str.length() == 1) {
+            return true;
+        }
+        return isAllDigits(str.substring(1));
     }
 
     /*

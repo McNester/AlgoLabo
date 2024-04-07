@@ -1,3 +1,4 @@
 #!/bin/bash
-javac ../java/Main.java
-java ../java/Main.java "$@"
+
+javac ~/IdeaProjects/AlgoLabo/src/main/java/*.java
+java ~/IdeaProjects/AlgoLabo/src/main/java/Main.java "$@"
