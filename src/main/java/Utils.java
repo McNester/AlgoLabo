@@ -12,6 +12,8 @@ public class Utils {
      * Global scanner wich is used throughout the class for inputs
      */
     private static Scanner scan = new Scanner(System.in);
+    private static long timeStart = 0;
+    private static long timeEnd = 0;
 
     public static void printNotExist() {
         System.out.println("Command does not exist");
@@ -22,6 +24,44 @@ public class Utils {
         System.out.println("__________________");
         System.out.println();
 
+    }
+
+    public static void printTimeComplexity(int prob) {
+        String complexity = "";
+        if (prob == 1 || prob == 2 || prob == 4 || prob == 6 || prob == 8) {
+            complexity = "O(n)";
+        } else if (prob == 3) {
+            complexity = "O(√n)";
+        } else if (prob == 5 || prob == 9) {
+            complexity = "O(2^n)";
+        } else if (prob == 7) {
+            complexity = "O(n^2)";
+        } else if (prob == 10) {
+            complexity = "O( log( min( a, b ) ) )";
+        }
+
+        System.out.printf("The time complexity is: %s\n", complexity);
+
+    }
+
+    public static void startTimer() {
+        timeStart = System.currentTimeMillis();
+    }
+
+    public static void endTimer() {
+        timeEnd = System.currentTimeMillis();
+    }
+
+    private static void clearTimer() {
+        timeEnd = 0;
+        timeStart = 0;
+
+    }
+
+    public static void printExecutionTime() {
+        long executionTime = timeEnd - timeStart;
+        System.out.printf("Execution time in milliseconds: %d", executionTime);
+        clearTimer();
     }
 
     public static int getNumberInput() {

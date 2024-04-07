@@ -76,7 +76,12 @@ public class Main {
         Utils.printNewLine();
         int[] arr = Utils.getArrayInput();
         Utils.printNewLine();
+        Utils.startTimer();
         System.out.println("The minimum val from the array: " + getMin(arr));
+        Utils.endTimer();
+
+        Utils.printTimeComplexity(1);
+        Utils.printExecutionTime();
 
     }
 
@@ -94,7 +99,13 @@ public class Main {
         Utils.printNewLine();
         int[] array = Utils.getArrayInput();
         Utils.printNewLine();
+
+        Utils.startTimer();
         System.out.println("The average from the array: " + getAvg(array));
+        Utils.endTimer();
+
+        Utils.printTimeComplexity(2);
+        Utils.printExecutionTime();
     }
 
     /*
@@ -112,15 +123,21 @@ public class Main {
 
         int num = Utils.getNumberInput();
 
+        Utils.startTimer();
         boolean isPrime = isPrime(num);
+        Utils.endTimer();
+
         Utils.printNewLine();
         System.out.print("The number is ");
 
         if (isPrime) {
             System.out.println("Prime");
-            return;
+        } else {
+            System.out.println("Composite");
         }
-        System.out.println("Composite");
+
+        Utils.printTimeComplexity(3);
+        Utils.printExecutionTime();
     }
 
     /*
@@ -138,10 +155,15 @@ public class Main {
 
         int num = Utils.getNumberInput();
 
+        Utils.startTimer();
         int factorial = getFactorial(num);
+        Utils.endTimer();
 
         Utils.printNewLine();
         System.out.printf("The factorial of the %d is- %d \n", num, factorial);
+
+        Utils.printTimeComplexity(4);
+        Utils.printExecutionTime();
 
     }
 
@@ -163,10 +185,15 @@ public class Main {
 
         int num = Utils.getNumberInput();
 
+        Utils.startTimer();
         int fib = findFibonacciElement(num);
+        Utils.endTimer();
 
         Utils.printNewLine();
         System.out.printf("The %d-th element in the Fibonacci sequence is: %d\n", num, fib);
+
+        Utils.printTimeComplexity(5);
+        Utils.printExecutionTime();
 
     }
 
@@ -189,11 +216,15 @@ public class Main {
         int a = inputs[0];
         int n = inputs[1];
 
+        Utils.startTimer();
         double result = findPower(a, n);
+        Utils.endTimer();
 
         Utils.printNewLine();
-        System.out.printf("The %d-th power of %d is- %f.", n, a, result);
+        System.out.printf("The %d-th power of %d is- %f.\n", n, a, result);
 
+        Utils.printTimeComplexity(6);
+        Utils.printExecutionTime();
     }
 
     /*
@@ -214,11 +245,19 @@ public class Main {
         System.out.println("The 7. problem");
         Utils.printNewLine();
         LinkedList<Integer> list = Utils.getLinkedListInput();
+
+        Utils.startTimer();
         LinkedList<Integer> revList = reverseList(list);
+        Utils.endTimer();
 
         Utils.printNewLine();
         System.out.print("Here is the reversed array: ");
         Utils.printLinkedList(revList);
+
+        System.out.println();
+
+        Utils.printTimeComplexity(7);
+        Utils.printExecutionTime();
 
     }
 
@@ -241,11 +280,16 @@ public class Main {
 
         Utils.printNewLine();
         System.out.print("Does the string consists of all digits?  ");
+        Utils.startTimer();
         if (isAllDigits(str)) {
             System.out.print("Yes\n");
         } else {
             System.out.print("No\n");
         }
+        Utils.endTimer();
+
+        Utils.printTimeComplexity(8);
+        Utils.printExecutionTime();
     }
 
     /*
@@ -268,11 +312,16 @@ public class Main {
         int n = inputs[0];
         int k = inputs[1];
 
+        Utils.startTimer();
         int bin = findBinomial(n, k);
+        Utils.endTimer();
 
         Utils.printNewLine();
 
         System.out.printf("The C(%d,%d) is: %d\n", n, k, bin);
+
+        Utils.printTimeComplexity(9);
+        Utils.printExecutionTime();
 
     }
 
@@ -297,8 +346,14 @@ public class Main {
         int a = inputs[0];
         int b = inputs[1];
 
+        Utils.startTimer();
         int gcd = findGCD(a, b);
+        Utils.endTimer();
+
         System.out.printf("The GCD(%d,%d) is: %d\n", a, b, gcd);
+
+        Utils.printTimeComplexity(10);
+        Utils.printExecutionTime();
 
     }
 
