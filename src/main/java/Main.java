@@ -19,12 +19,11 @@ public class Main {
     }
 
     /*
-     * This function executes all the ten problems sequentially
+     * This method executes all the ten problems sequentially
      * this method is executed only when the class runned through Idea or through
      * command line(seraf)
      */
-
-    private static void main() {
+    private static void runAll() {
         runFirstProblem();
         runSecondProblem();
         runThirdProblem();
@@ -38,6 +37,27 @@ public class Main {
 
         Utils.printNewLine();
         System.out.println("You've checked all the problems! Thank you for your time!");
+
+    }
+
+    private static void main() {
+        Utils.printNewLine();
+        System.out.println("Choose what you wanna do");
+        Utils.printNewLine();
+        System.out.println("1. run all the problems sequentially");
+        System.out.println("2. choose the problem");
+
+        int choice = Utils.getNumberInput();
+
+        if (choice == 1) {
+            runAll();
+        } else if (choice == 2) {
+            System.out
+                    .println("To choose the problem enter ordinal number followed by Prob, e.g. firstProb,secondProb");
+            String strChoice = Utils.getStrInput();
+
+            executeFromCmd(strChoice);
+        }
 
     }
 
@@ -220,7 +240,7 @@ public class Main {
         String str = Utils.getStrInput();
 
         Utils.printNewLine();
-        System.out.print("Does the string consists of digits?  ");
+        System.out.print("Does the string consists of all digits?  ");
         if (isAllDigits(str)) {
             System.out.print("Yes\n");
         } else {
@@ -572,10 +592,13 @@ public class Main {
      * (e.g. seraf firstProb executes @see #runFristProblem())
      */
     private static void executeFromCmd(String method) {
-        if (method.equals("list")) {
+        if (method.equals("all")) {
+            runAll();
+        } else if (method.equals("list")) {
             Utils.printNewLine();
             System.out.println("To run the problem(ordinal_numberProb)- firstProb,secondProb,thirdProb, etc.");
-            System.out.println("To run all the problems one by one- just run seraf without any specification.");
+            System.out.println("To run all the problems one by one- all");
+            System.out.println("To run the main- simply run seraf without any additional command");
             System.out.println("*There are 10 problems.");
             Utils.printNewLine();
 
