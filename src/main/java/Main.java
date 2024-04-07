@@ -375,24 +375,19 @@ public class Main {
      * The method finds the n-th element from the fibonacci sequence.
      *
      * It uses recursive approach going trought all the numbers from n to the point
-     * When the n becomes 0 or the 1, Thus it has time complexity of O(n^2).
+     * When the n becomes 0 or the 1, Thus it has time complexity of O(2^n).
      *
      * @param n The index of the element of the fibonacci sequence.
      * 
      * @return The n-th element of the fibonacci sequence.
      *
      */
-    // TODO: optimize the algo
     public static int findFibonacciElement(int n) {
-
         if (n == 0) {
-
             return 0;
         } else if (n == 1) {
             return 1;
-
         }
-
         return findFibonacciElement(n - 1) + findFibonacciElement(n - 2);
     }
 
@@ -401,7 +396,8 @@ public class Main {
      * 
      * It uses recursive approach with base cases(e.g. power is 0),
      * By multiplying the given number by itself n-times,
-     * Thus it has time complexity of O(n).
+     * Thus it has time complexity of O(n), where n is the power to which the number
+     * a is raised.
      *
      * @param a The number that we raise to the power of n.
      * 
@@ -435,16 +431,28 @@ public class Main {
     /*
      * The method reverses the given array without changing the original array.
      *
-     * It uses for-lop to iterate through all the elements of the array,
-     * Additionally the method using LinkedList instead of usual arrays,
-     * Thus the method has time complexity of O(n^2), because the LinkedList's get
-     * method
-     * Has time complexity of O(n), making overall method time complexity O(n^2).
+     * It works by taking the first and the last elements of the given array and
+     * passing
+     * Those values in reverse to the LinkedList that we'll return at the end, next
+     * step is
+     * We pass what's in the middle of the given list between first and last
+     * elements to the
+     * ReverseList, creating recursion. After the given list reaches the size of 2
+     * or 1 we return
+     * This list and insert it in the middle of the previous list, and by the end of
+     * recursion we get
+     * Reversed version of the original list.
+     *
+     * The method has time complexity of O(n^2) because of the creation of sublist(
+     * O(n) )
+     * And lists merging ( O(k) k is the number of elements being merged ). So
+     * roughly,
+     * Time complexity: O(n^2)
      *
      * @param list The array that we turn into reversed one(not changing the
      * original array)
      * 
-     * @return The reversed array of the given one.
+     * @return The reversed version of the given array.
      */
     // TODO: optimize the algo
     public static LinkedList<Integer> reverseList(LinkedList<Integer> list) {
@@ -478,11 +486,18 @@ public class Main {
 
     /*
      * The method identifies wheter the given string consists of all digits or not.
+     * 
+     * It is using Character built in function isDigit which checks if the char is
+     * digit,
+     * So using recursion we pass the string without the first char(while checking
+     * it),
+     * And when the length of the string is 1 we return true, because after checking
+     * each
+     * Char we never encountered char that is not digit.
      *
-     * It is using the String class built in method matches, where regexp is
-     * provided,
-     * By using matches method time complexity is O(n) based on the regexp which is
-     * relatively simple.
+     * The time complexity of the given method is O(n), since it basically iterates
+     * through
+     * All the chars of the given string.
      *
      * @param str The string which we check for consisting of all digits or no.
      * 
