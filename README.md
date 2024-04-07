@@ -34,6 +34,10 @@ sudo ln -s ~/IdeaProjects/AlgoLabo/src/scripts/seraf.sh /usr/local/bin/seraf
 ls -l /usr/local/bin/seraf
 #Must show the location of the symlink, in case of success
 ```
+5. **If the command is executing with errors about Utils class, go here and then run the commands**
+```sh
+cd ~/IdeaProjects/AlgoLabo/src/main/java
+```
 
 ### Running(Mac/Linux)
 1. **First way to test out the problems is by using the terminal**
@@ -44,13 +48,18 @@ ls -l /usr/local/bin/seraf
     ```
     If you want to test all 10 problems sequentially just run:
     ```sh
-    seraf
+    seraf all
     ```
     If you want to test each problem individually type:
     ```sh
     seraf firstProb # e.g. secondProb,thirdProb... 
     ```
     Just use ordinal number followed by Prob, and it will run the corresponding problem.
+
+    If you want to run the main simply type:
+    ```sh
+    seraf #without any additional command
+    ```
 2. **Another way to test out the problems is simply by opening the project in IDE and running Main class**
 
 ### Running(Windows)
