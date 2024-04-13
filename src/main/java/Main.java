@@ -357,6 +357,38 @@ public class Main {
 
     }
 
+    // NOTE: here is assignment one defence
+    // give a string we have to count accurance of a specific charachter
+
+    public static void runDefence() {
+        Utils.printNewLine();
+        System.out.println("The defence.\nFirst enter the sentence, and then the char");
+        Utils.printNewLine();
+
+        String sentence = Utils.getStrInput();
+        String letter = Utils.getStrInput();
+        int accurance = countAccurance(sentence, letter);
+
+        Utils.printNewLine();
+        System.out.printf("The accurance of %s in the sentance %s is: %d\n", letter, sentence, accurance);
+
+    }
+
+    public static int countAccurance(String str, String letter) {
+
+        String firstInSentance = str.charAt(0) + "";
+        String letterToCheck = letter.charAt(0) + "";
+
+        if (firstInSentance.equalsIgnoreCase(letterToCheck)) {
+            letter += str.charAt(0);
+        }
+        if (str.length() == 1) {
+            return letter.length() - 1;
+        }
+
+        return countAccurance(str.substring(1), letter);
+    }
+
     /*
      * The method finds the minimum value in the given array
      *
@@ -657,6 +689,8 @@ public class Main {
             System.out.println("*There are 10 problems.");
             Utils.printNewLine();
 
+        } else if (method.equals("defence")) {
+            runDefence();
         } else if (method.equals("firstProb")) {
             runFirstProblem();
         } else if (method.equals("secondProb")) {
